@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>yueyinqiu5990</Authors>
+    <Company>YiJingFramework</Company>
+    <Description>YiJingFramework is a C# library (group) about Yi Jing.</Description>
+    <Copyright>Copyright © 2021 yueyinqiu5990. All rights reserved.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/YiJingFramework/YiJingFramework.Painting.Presenting/wiki</PackageProjectUrl>
+    <PackageId>YiJingFramework.Painting.Presenting</PackageId>
+    <PackageIcon>Taichi.png</PackageIcon>
+    <RepositoryUrl>https://github.com/YiJingFramework/YiJingFramework.Painting.Presenting.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>zhouyi;i-ching;yijing;yijingframework</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>obj\Release\net5.0\YiJingFramework.Painting.Presenting.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
+    <PackageReference Include="YiJingFramework.Core" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Taichi.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
