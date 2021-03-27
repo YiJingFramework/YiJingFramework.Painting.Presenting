@@ -116,21 +116,21 @@ namespace YiJingFramework.Painting.Presenting
                 if (difference is >= 0 and < 8)
                 {
                     var first = Core.LineAttribute.Yang;
-                    if (difference > 4)
+                    if (difference >= 4)
                     {
                         first = Core.LineAttribute.Yin;
                         difference -= 4;
                     }
 
                     var second = Core.LineAttribute.Yang;
-                    if (difference > 2)
+                    if (difference >= 2)
                     {
                         second = Core.LineAttribute.Yin;
                         difference -= 2;
                     }
 
                     var third = Core.LineAttribute.Yang;
-                    if (difference > 1)
+                    if (difference >= 1)
                         third = Core.LineAttribute.Yin;
 
                     result = new Core.Painting(first, second, third);
