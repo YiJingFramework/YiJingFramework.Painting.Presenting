@@ -16,6 +16,7 @@
     <RepositoryUrl>https://github.com/YiJingFramework/YiJingFramework.Painting.Presenting.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>zhouyi;i-ching;yijing;yijingframework</PackageTags>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

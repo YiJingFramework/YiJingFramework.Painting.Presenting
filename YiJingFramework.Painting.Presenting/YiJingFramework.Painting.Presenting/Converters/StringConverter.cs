@@ -68,7 +68,7 @@ namespace YiJingFramework.Painting.Presenting
         {
             if (painting is null)
                 throw new ArgumentNullException(nameof(painting));
-            var linq = from line in painting
+            var linq = from line in painting.Reverse()
                        select line == Core.LineAttribute.Yang ? this.yang : this.yin;
             return string.Join(this.separator, linq);
         }
