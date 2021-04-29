@@ -12,14 +12,14 @@ namespace Examples
             #region to convert to characters and back
             Console.OutputEncoding = Encoding.Unicode;
             Painting yang = new Painting(
-                LineAttribute.Yang); // 阳
+                YinYang.Yang); // 阳
             Painting shaoYin = new Painting(
-                LineAttribute.Yang, LineAttribute.Yin); // 少阴
+                YinYang.Yang, YinYang.Yin); // 少阴
             Painting li = new Painting(
-                LineAttribute.Yang, LineAttribute.Yin, LineAttribute.Yang); // 离
+                YinYang.Yang, YinYang.Yin, YinYang.Yang); // 离
             Painting qian = new Painting(
-                LineAttribute.Yin, LineAttribute.Yin, LineAttribute.Yang,
-                LineAttribute.Yin, LineAttribute.Yin, LineAttribute.Yin); // 谦
+                YinYang.Yin, YinYang.Yin, YinYang.Yang,
+                YinYang.Yin, YinYang.Yin, YinYang.Yin); // 谦
             Console.Write($"{yang}-{shaoYin}-{li}-{qian} ");
             var characterConverter = new CharacterConverter();
             char characterOfQian = characterConverter.ConvertTo(qian);

@@ -15,55 +15,55 @@ namespace YiJingFramework.Painting.Presenting.Tests
         public void ConvertToTest()
         {
             IConverterTo<char> c = new CharacterConverter();
-            var yang = c.ConvertTo(new Core.Painting(Core.LineAttribute.Yang));
+            var yang = c.ConvertTo(new Core.Painting(Core.YinYang.Yang));
             Assert.AreEqual('⚊', yang);
-            var yin = c.ConvertTo(new Core.Painting(Core.LineAttribute.Yin));
+            var yin = c.ConvertTo(new Core.Painting(Core.YinYang.Yin));
             Assert.AreEqual('⚋', yin);
-            var yangyang = c.ConvertTo(new Core.Painting(Core.LineAttribute.Yang, Core.LineAttribute.Yang));
+            var yangyang = c.ConvertTo(new Core.Painting(Core.YinYang.Yang, Core.YinYang.Yang));
             Assert.AreEqual('⚌', yangyang);
-            var yangyin = c.ConvertTo(new Core.Painting(Core.LineAttribute.Yang, Core.LineAttribute.Yin));
+            var yangyin = c.ConvertTo(new Core.Painting(Core.YinYang.Yang, Core.YinYang.Yin));
             Assert.AreEqual('⚍', yangyin);
-            var yinyang = c.ConvertTo(new Core.Painting(Core.LineAttribute.Yin, Core.LineAttribute.Yang));
+            var yinyang = c.ConvertTo(new Core.Painting(Core.YinYang.Yin, Core.YinYang.Yang));
             Assert.AreEqual('⚎', yinyang);
-            var yinyin = c.ConvertTo(new Core.Painting(Core.LineAttribute.Yin, Core.LineAttribute.Yin));
+            var yinyin = c.ConvertTo(new Core.Painting(Core.YinYang.Yin, Core.YinYang.Yin));
             Assert.AreEqual('⚏', yinyin);
             var xun = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yin, Core.LineAttribute.Yang, Core.LineAttribute.Yang));
+                Core.YinYang.Yin, Core.YinYang.Yang, Core.YinYang.Yang));
             Assert.AreEqual('☴', xun);
             var qian = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yang, Core.LineAttribute.Yang, Core.LineAttribute.Yang));
+                Core.YinYang.Yang, Core.YinYang.Yang, Core.YinYang.Yang));
             Assert.AreEqual('☰', qian);
             var kun = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yin, Core.LineAttribute.Yin, Core.LineAttribute.Yin));
+                Core.YinYang.Yin, Core.YinYang.Yin, Core.YinYang.Yin));
             Assert.AreEqual('☷', kun);
             var dui = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yang, Core.LineAttribute.Yang, Core.LineAttribute.Yin));
+                Core.YinYang.Yang, Core.YinYang.Yang, Core.YinYang.Yin));
             Assert.AreEqual('☱', dui);
             var ze = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yin, Core.LineAttribute.Yang, Core.LineAttribute.Yin));
+                Core.YinYang.Yin, Core.YinYang.Yang, Core.YinYang.Yin));
             Assert.AreEqual('☵', ze);
 
             var qian6 = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yang, Core.LineAttribute.Yang, Core.LineAttribute.Yang,
-                Core.LineAttribute.Yang, Core.LineAttribute.Yang, Core.LineAttribute.Yang));
+                Core.YinYang.Yang, Core.YinYang.Yang, Core.YinYang.Yang,
+                Core.YinYang.Yang, Core.YinYang.Yang, Core.YinYang.Yang));
             Assert.AreEqual('䷀', qian6);
             var weiji = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yin, Core.LineAttribute.Yang, Core.LineAttribute.Yin,
-                Core.LineAttribute.Yang, Core.LineAttribute.Yin, Core.LineAttribute.Yang));
+                Core.YinYang.Yin, Core.YinYang.Yang, Core.YinYang.Yin,
+                Core.YinYang.Yang, Core.YinYang.Yin, Core.YinYang.Yang));
             Assert.AreEqual('䷿', weiji);
             var r = c.ConvertTo(new Core.Painting(
-                Core.LineAttribute.Yin, Core.LineAttribute.Yang, Core.LineAttribute.Yang,
-                Core.LineAttribute.Yin, Core.LineAttribute.Yin, Core.LineAttribute.Yin));
+                Core.YinYang.Yin, Core.YinYang.Yang, Core.YinYang.Yang,
+                Core.YinYang.Yin, Core.YinYang.Yin, Core.YinYang.Yin));
             Assert.AreEqual('䷭', r);
         }
 
         readonly Random random = new Random();
         private Core.Painting GetRandomPainting(int lineCount)
         {
-            List<Core.LineAttribute> lines = new List<Core.LineAttribute>(lineCount);
+            List<Core.YinYang> lines = new List<Core.YinYang>(lineCount);
             for(int i =0;i < lineCount;i++)
             {
-                lines.Add(random.Next(0, 2) == 0 ? Core.LineAttribute.Yang : Core.LineAttribute.Yin);
+                lines.Add(random.Next(0, 2) == 0 ? Core.YinYang.Yang : Core.YinYang.Yin);
             }
             return new Core.Painting(lines);
         }

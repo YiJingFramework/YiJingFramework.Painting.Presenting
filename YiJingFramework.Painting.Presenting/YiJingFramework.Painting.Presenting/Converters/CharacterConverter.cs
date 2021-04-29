@@ -38,13 +38,13 @@ namespace YiJingFramework.Painting.Presenting
         public char ConvertTo(Core.Painting painting)
         {
             if (painting.Count == 1)
-                return painting[0] == Core.LineAttribute.Yang ? '\u268A' : '\u268B';
+                return painting[0].IsYang ? '\u268A' : '\u268B';
 
             if (painting.Count == 2)
             {
-                if (painting[0] == Core.LineAttribute.Yang)
-                    return painting[1] == Core.LineAttribute.Yang ? '\u268C' : '\u268D';
-                return painting[1] == Core.LineAttribute.Yang ? '\u268E' : '\u268F';
+                if (painting[0].IsYang)
+                    return painting[1].IsYang ? '\u268C' : '\u268D';
+                return painting[1].IsYang ? '\u268E' : '\u268F';
             }
 
             if (painting.Count == 3)
@@ -53,7 +53,7 @@ namespace YiJingFramework.Painting.Presenting
                 int d = 4;
                 foreach (var line in painting)
                 {
-                    if (line == Core.LineAttribute.Yin)
+                    if (!line.IsYang)
                         value += d;
                     d = d / 2;
                 }
@@ -90,22 +90,22 @@ namespace YiJingFramework.Painting.Presenting
             switch (value)
             {
                 case '\u268A':
-                    result = new Core.Painting(Core.LineAttribute.Yang);
+                    result = new Core.Painting(Core.YinYang.Yang);
                     return true;
                 case '\u268B':
-                    result = new Core.Painting(Core.LineAttribute.Yin);
+                    result = new Core.Painting(Core.YinYang.Yin);
                     return true;
                 case '\u268C':
-                    result = new Core.Painting(Core.LineAttribute.Yang, Core.LineAttribute.Yang);
+                    result = new Core.Painting(Core.YinYang.Yang, Core.YinYang.Yang);
                     return true;
                 case '\u268D':
-                    result = new Core.Painting(Core.LineAttribute.Yang, Core.LineAttribute.Yin);
+                    result = new Core.Painting(Core.YinYang.Yang, Core.YinYang.Yin);
                     return true;
                 case '\u268E':
-                    result = new Core.Painting(Core.LineAttribute.Yin, Core.LineAttribute.Yang);
+                    result = new Core.Painting(Core.YinYang.Yin, Core.YinYang.Yang);
                     return true;
                 case '\u268F':
-                    result = new Core.Painting(Core.LineAttribute.Yin, Core.LineAttribute.Yin);
+                    result = new Core.Painting(Core.YinYang.Yin, Core.YinYang.Yin);
                     return true;
                 default:
                     break;
@@ -115,23 +115,23 @@ namespace YiJingFramework.Painting.Presenting
                 var difference = value - '\u2630';
                 if (difference is >= 0 and < 8)
                 {
-                    var first = Core.LineAttribute.Yang;
+                    var first = Core.YinYang.Yang;
                     if (difference >= 4)
                     {
-                        first = Core.LineAttribute.Yin;
+                        first = Core.YinYang.Yin;
                         difference -= 4;
                     }
 
-                    var second = Core.LineAttribute.Yang;
+                    var second = Core.YinYang.Yang;
                     if (difference >= 2)
                     {
-                        second = Core.LineAttribute.Yin;
+                        second = Core.YinYang.Yin;
                         difference -= 2;
                     }
 
-                    var third = Core.LineAttribute.Yang;
+                    var third = Core.YinYang.Yang;
                     if (difference >= 1)
-                        third = Core.LineAttribute.Yin;
+                        third = Core.YinYang.Yin;
 
                     result = new Core.Painting(first, second, third);
                     return true;
