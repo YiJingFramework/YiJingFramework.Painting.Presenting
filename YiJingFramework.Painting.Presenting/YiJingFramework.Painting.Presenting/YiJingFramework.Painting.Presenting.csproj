@@ -4,10 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Authors>yueyinqiu5990</Authors>
     <Company>YiJingFramework</Company>
-    <Description>YiJingFramework is a C# library (group) about Yi Jing.</Description>
+    <Description>This package provides more presenting ways of the paintings.</Description>
     <Copyright>Copyright © 2021 yueyinqiu5990. All rights reserved.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/YiJingFramework/YiJingFramework.Painting.Presenting/wiki</PackageProjectUrl>
@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/YiJingFramework/YiJingFramework.Painting.Presenting.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>zhouyi;i-ching;yijing;yijingframework</PackageTags>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -24,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="YiJingFramework.Core" Version="4.0.0" />
+    <PackageReference Include="YiJingFramework.Core" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
