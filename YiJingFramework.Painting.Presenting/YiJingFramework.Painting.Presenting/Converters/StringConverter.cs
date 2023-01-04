@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using YiJingFramework.Painting.Presenting.Exceptions;
 
-namespace YiJingFramework.Painting.Presenting
+namespace YiJingFramework.Painting.Presenting.Converters
 {
     /// <summary>
     /// 将卦画以指定的分割符和阴阳表示方式转换成字符串。

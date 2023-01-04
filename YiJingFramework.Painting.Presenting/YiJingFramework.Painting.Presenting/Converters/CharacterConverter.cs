@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using YiJingFramework.Painting.Presenting.Exceptions;
 
-namespace YiJingFramework.Painting.Presenting
+namespace YiJingFramework.Painting.Presenting.Converters
 {
     /// <summary>
     /// 将卦画转变到字符。

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using YiJingFramework.Core;
-using YiJingFramework.Painting.Presenting;
+using YiJingFramework.Painting.Presenting.Converters;
 
 namespace Examples
 {
