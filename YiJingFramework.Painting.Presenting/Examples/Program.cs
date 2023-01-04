@@ -2,6 +2,7 @@
 using System.Text;
 using YiJingFramework.Core;
 using YiJingFramework.Painting.Presenting.Converters;
+using YiJingFramework.Painting.Presenting.Extensions;
 
 namespace Examples
 {
@@ -20,17 +21,24 @@ namespace Examples
             Painting qian = new Painting(
                 YinYang.Yin, YinYang.Yin, YinYang.Yang,
                 YinYang.Yin, YinYang.Yin, YinYang.Yin); // 谦
-            Console.Write($"{yang}-{shaoYin}-{li}-{qian} ");
+            Console.WriteLine($"{yang}-{shaoYin}-{li}-{qian} ");
+            Console.WriteLine();
+            // Output: 1-10-101-001000
+
             var characterConverter = new CharacterConverter();
             char characterOfQian = characterConverter.ConvertTo(qian);
-            Console.Write($"{characterConverter.ConvertTo(yang)}-" +
-                $"{characterConverter.ConvertTo(shaoYin)}-" +
-                $"{characterConverter.ConvertTo(li)}-" +
+            Console.WriteLine(
+                $"{characterConverter.ConvertTo(yang)}-" +
+                $"{shaoYin.ToUnicodeCharacter()}-" +
+                $"{li.ToUnicodeCharacter()}-" +
                 $"{characterOfQian} ");
+            Console.WriteLine();
+            // Output: ⚊-⚍-☲-䷎
+
             _ = characterConverter.TryConvertFrom(characterOfQian, out Painting result);
             Console.WriteLine(result);
             Console.WriteLine();
-            // Output: 1-10-101-001000 ⚊-⚍-☲-䷎ 001000
+            // Output: 001000
             #endregion
 
             #region to convert to string

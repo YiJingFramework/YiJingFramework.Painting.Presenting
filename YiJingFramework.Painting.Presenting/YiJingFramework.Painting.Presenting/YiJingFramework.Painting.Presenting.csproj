@@ -24,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="YiJingFramework.Core" Version="4.0.1" />
+    <PackageReference Include="YiJingFramework.Core" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
